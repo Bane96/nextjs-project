@@ -3,9 +3,7 @@ import VehiclesPage from './vehicles';
 
 const HomePage = () => {
     return (
-        <div>
-            <VehiclesPage/>
-        </div>
+        <VehiclesPage/>
     );
 };
 
