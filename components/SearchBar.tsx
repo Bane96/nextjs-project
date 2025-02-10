@@ -21,14 +21,14 @@ const SearchBar = ({setSearch, search, sort, setSort, resetPage}: SearchBarProps
         <div>
             <div className="flex justify-center gap-5 mb-4">
                 <input
+                    className="input-primary w-3/4"
                     type="text"
                     placeholder="Search brands, models..."
-                    className="border p-2 rounded-xl w-full"
                     defaultValue={search}
                     onChange={handleSearch}
                 />
                 <select
-                    className="border p-2 rounded-xl"
+                    className="input-primary w-1/4"
                     value={sort}
                     onChange={(e) => setSort(e.target.value)}
                 >
