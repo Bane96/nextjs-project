@@ -3,7 +3,7 @@ import {Vehicle} from '@/model/Vehicle';
 import {priceSplitter} from '@/utils/functions';
 import {VehicleCondition} from '@/enum/VehicleCondition';
 import Link from 'next/link';
-import Image from 'next/image';
+import BlurImage from '@/components/BlurImage';
 
 interface VehicleCardProps {
     vehicle: Vehicle;
@@ -17,15 +17,17 @@ const VehicleCard = ({vehicle}: VehicleCardProps) => {
     return (
         <div className="bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl relative">
             {vehicle?.condition === VehicleCondition.NEW &&
-                <span className="text-xs absolute top-2 rounded-full right-2 text-white bg-primary p-1">
+                <span className="text-xs absolute top-2 rounded-full right-2 text-white bg-primary p-1 z-10">
                     New
                 </span>
             }
-            <Image src={vehicle?.images[0] ?? ''}
-                   alt={vehicle?.model ?? ''}
-                   loading="lazy"
-                   className="object-cover rounded-t-xl"
-                   width={600} height={500}
+            <BlurImage
+                src={vehicle?.images[0] ?? ''}
+                alt={`${vehicle?.model}`}
+                width={400}
+                height={300}
+                className="w-full h-[200px] object-cover rounded-xl"
+                priority={true}
             />
             <div className="px-4 py-3">
                 <span className="text-gray-400 mr-3 uppercase text-xs">{vehicle?.brand}</span>

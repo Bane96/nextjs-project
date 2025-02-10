@@ -1,21 +1,14 @@
-import React, {ChangeEvent, Dispatch, SetStateAction} from 'react';
-import debounce from 'lodash.debounce'
+import React, {Dispatch, SetStateAction} from 'react';
 
 interface SearchBarProps {
     search: string;
-    setSearch: Dispatch<SetStateAction<string>>;
+    setSearch: (value: string) => void;
     sort: string
     setSort: Dispatch<SetStateAction<string>>
     resetPage: () => void;
 }
 
-const SearchBar = ({setSearch, search, sort, setSort, resetPage}: SearchBarProps) => {
-
-    const handleSearch = debounce((event: ChangeEvent<HTMLInputElement>) => {
-        const {value, name} = event.target
-        setSearch(value);
-        resetPage()
-    }, 300);
+const SearchBar = ({setSearch, search, sort, setSort}: SearchBarProps) => {
 
     return (
         <div>
@@ -24,8 +17,8 @@ const SearchBar = ({setSearch, search, sort, setSort, resetPage}: SearchBarProps
                     className="input-primary w-3/4"
                     type="text"
                     placeholder="Search brands, models..."
-                    defaultValue={search}
-                    onChange={handleSearch}
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
                 />
                 <select
                     className="input-primary w-1/4"
