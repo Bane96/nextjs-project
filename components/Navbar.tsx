@@ -8,6 +8,7 @@ const Navbar = () => {
                 <nav className="flex justify-between items-center">
                     <Link href="/">
                         {/*<Image priority={false} src="" alt="logo" width={144} height={30} />*/}
+                        Logo
                     </Link>
                 </nav>
             </header>
