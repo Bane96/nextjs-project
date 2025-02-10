@@ -1,5 +1,5 @@
 import { renderHook, waitFor } from "@testing-library/react";
-import { useVehicles } from "../hooks/useVehicles";
+import { useVehicles } from "@/hooks/useVehicles";
 
 global.fetch = jest.fn(() =>
     Promise.resolve({
