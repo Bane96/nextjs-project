@@ -4,12 +4,14 @@ import React, {useEffect, useState} from 'react';
 import SearchBar from '@/components/SearchBar';
 import {useVehicles} from '@/hooks/useVehicles';
 import VehicleCard from '@/components/VehicleCard';
+import EmptyState from '@/components/EmptyState';
+import Pagination from '@/components/Pagination';
 
 const VehiclesPage = () => {
     const [sort, setSort] = useState('');
     const [search, setSearch] = useState('');
     const [page, setPage] = useState(1);
-    const {vehicles} = useVehicles(search, sort, page);
+    const {vehicles, totalPages} = useVehicles(search, sort, page);
 
     useEffect(() => {
         window.scrollTo({top: 0, behavior: "smooth"});
@@ -35,6 +37,10 @@ const VehiclesPage = () => {
                         </article>
                     ))}
                 </section>
+                {!!vehicles.length &&
+                    <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage}/>
+                }
+                {!vehicles.length && <EmptyState text="Vehicles list is empty"/>}
             </div>
         </>
     );
