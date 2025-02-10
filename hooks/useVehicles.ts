@@ -14,7 +14,7 @@ export function useVehicles(search = "", sort = "", page = 1, perPage = 12) {
 
                 // Filter by brand or model
                 if (search) {
-                    filteredData = filteredData.filter((vehicle) =>
+                    filteredData = filteredData.filter((vehicle: Vehicle) =>
                         vehicle.brand.toLowerCase().includes(search.toLowerCase()) ||
                         vehicle.model.toLowerCase().includes(search.toLowerCase())
                     );
