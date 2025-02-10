@@ -9,3 +9,7 @@ export function priceSplitter(num: number | null | undefined): string {
 
     return decimalPart ? `${formattedIntegerPart},${decimalPart}` : formattedIntegerPart;
 }
+
+export function scrollToTop() {
+    window.scrollTo({top: 0, behavior: "smooth"});
+}
