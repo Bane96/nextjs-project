@@ -6,6 +6,7 @@ import {Zoom, Navigation, Pagination} from 'swiper/modules';
 import {priceSplitter} from '@/utils/functions';
 import {VehicleCondition} from '@/enum/VehicleCondition';
 import BlurImage from '@/components/BlurImage';
+import {VEHICLE_DETAIL_IMG_H, VEHICLE_DETAIL_IMG_W} from '@/utils/constants';
 interface VehicleDetailProps {
     vehicle: Vehicle;
 }
@@ -32,8 +33,8 @@ const VehicleDetail = ({vehicle}: VehicleDetailProps) => {
                                         alt={vehicle.model}
                                         className="object-contain w-full h-full"
                                         priority={index === 0}
-                                        width={400}
-                                        height={300}
+                                        width={VEHICLE_DETAIL_IMG_W}
+                                        height={VEHICLE_DETAIL_IMG_H}
                                     />
                                 </div>
                             </SwiperSlide>

@@ -4,6 +4,7 @@ import {priceSplitter} from '@/utils/functions';
 import {VehicleCondition} from '@/enum/VehicleCondition';
 import Link from 'next/link';
 import BlurImage from '@/components/BlurImage';
+import {VEHICLE_CARD_IMG_H, VEHICLE_CARD_IMG_W} from '@/utils/constants';
 
 interface VehicleCardProps {
     vehicle: Vehicle;
@@ -24,9 +25,9 @@ const VehicleCard = ({vehicle}: VehicleCardProps) => {
             <BlurImage
                 src={vehicle?.images[0] ?? ''}
                 alt={`${vehicle?.model}`}
-                width={400}
-                height={300}
-                className="w-full h-[200px] object-cover rounded-xl"
+                width={VEHICLE_CARD_IMG_W}
+                height={VEHICLE_CARD_IMG_H}
+                className="w-full h-[200px] object-cover rounded-t-xl"
                 priority={true}
             />
             <div className="px-4 py-3">
