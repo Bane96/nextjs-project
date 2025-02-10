@@ -5,7 +5,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Zoom, Navigation, Pagination} from 'swiper/modules';
 import {priceSplitter} from '@/utils/functions';
 import {VehicleCondition} from '@/enum/VehicleCondition';
-
+import BlurImage from '@/components/BlurImage';
 interface VehicleDetailProps {
     vehicle: Vehicle;
 }
@@ -17,7 +17,6 @@ const VehicleDetail = ({vehicle}: VehicleDetailProps) => {
                 <div className="md:w-2/3">
                     <Swiper
                         zoom={true}
-                        lazy="true"
                         navigation={true}
                         pagination={{
                             clickable: true,
@@ -28,9 +27,13 @@ const VehicleDetail = ({vehicle}: VehicleDetailProps) => {
                         {vehicle.images.map((img, index) => (
                             <SwiperSlide key={index + img}>
                                 <div className="swiper-zoom-container">
-                                    <img loading="lazy"
-                                         src={img}
-                                         alt={vehicle.model}
+                                    <BlurImage
+                                        src={img}
+                                        alt={vehicle.model}
+                                        className="object-contain w-full h-full"
+                                        priority={index === 0}
+                                        width={400}
+                                        height={300}
                                     />
                                 </div>
                             </SwiperSlide>

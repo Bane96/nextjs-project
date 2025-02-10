@@ -1,15 +1,16 @@
 import vehicleData from "@/data/vehicle_data.json";
 import {Vehicle} from '@/model/Vehicle';
-import EmptyState from '@/components/EmptyState';
-import VehicleDetail from '@/components/VehicleDetail';
 import {Metadata} from 'next';
+import dynamic from 'next/dynamic';
+const EmptyState = dynamic(() => import('@/components/EmptyState'));
+const VehicleDetail = dynamic(() => import('@/components/VehicleDetail'));
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-    const { id } = await params
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const { id } =  await params
 
     const vehicle = vehicleData.data.find(
-        (v: Vehicle) => `${v.brand}-${v.model}-${v.year}` === decodeURIComponent(id)
-    );
+        (v) => `${v.brand}-${v.model}-${v.year}` === decodeURIComponent(id)
+    ) as Vehicle;
 
     if (!vehicle) {
         return {
@@ -30,18 +31,16 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     };
 }
 
-export default async function VehicleDetailPage({params}: { params: { id: string } }) {
+export default async function VehicleDetailPage({params}: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const vehicle = vehicleData.data.find(
-        (v: Vehicle) => `${v.brand}-${v.model}-${v.year}` === decodeURIComponent(id)
-    );
+        (v) => `${v.brand}-${v.model}-${v.year}` === decodeURIComponent(id)
+    ) as Vehicle;
 
-    if (!vehicle) return <EmptyState text="Vehicle not founded"/>;
+    if (!vehicle) return <EmptyState text="Vehicle not found"/>;
 
     return (
-        <>
-            <VehicleDetail key={vehicle} vehicle={vehicle}/>
-        </>
+        <VehicleDetail vehicle={vehicle}/>
     );
 }
