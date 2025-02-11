@@ -14,17 +14,18 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Deploy on Docker
-
-The easiest way to deploy your Next.js app to Docker is to use the command.
-
-`docker compose up`
-
 ## Run tests
 
 The easiest way to run tests is to use this command
 
 `npm run test`  or `npm run test:watch`
+
+
+## Deploy on Docker
+
+The easiest way to deploy your Next.js app on Docker is to use the command.
+
+`docker compose up`
 
 ## Learn More
 
