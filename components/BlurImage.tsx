@@ -15,7 +15,7 @@ export default function BlurImage({ src, alt, width, height, className, priority
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className="relative">
+    <div className="relative fill-inherit">
       <Image
         src={src}
         alt={alt}

@@ -20,10 +20,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     }
 
     return {
-        title: `${vehicle.brand} ${vehicle.model} (${vehicle.year}) - Aampere`,
+        title: `${vehicle.brand} ${vehicle.model} (${vehicle.year}) - Amper`,
         description: `Explore details of the ${vehicle.brand} ${vehicle.model} from ${vehicle.year}. Price: $${vehicle.price}. Located in ${vehicle.location}.`,
         openGraph: {
-            title: `${vehicle.brand} ${vehicle.model} (${vehicle.year}) - Aampere`,
+            title: `${vehicle.brand} ${vehicle.model} (${vehicle.year}) - Amper`,
             description: `Find out more about this ${vehicle.brand} ${vehicle.model}. Price: $${vehicle.price}.`,
             images: vehicle.images[0] ? [vehicle.images[0]] : [],
             type: "website",

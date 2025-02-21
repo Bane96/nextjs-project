@@ -8,7 +8,7 @@ import React from 'react';
 import {Metadata} from 'next';
 
 export const metadata: Metadata = {
-    title: 'Accenture | electric vehicles',
+    title: 'Amper | electric vehicles',
     description: 'Easily sell your electric car online.',
 }
 

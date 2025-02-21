@@ -45,7 +45,7 @@ const VehiclesPage = () => {
 
     return (
         <>
-            <div className="p-5 container mx-auto">
+            <div>
                 <SearchBar
                     search={search}
                     setSearch={handleSearchChange}

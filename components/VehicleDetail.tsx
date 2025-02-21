@@ -31,7 +31,7 @@ const VehicleDetail = ({vehicle}: VehicleDetailProps) => {
                                     <BlurImage
                                         src={img}
                                         alt={vehicle.model}
-                                        className="object-contain w-full h-full"
+                                        className="object-cover w-full h-full rounded-xl"
                                         priority={index === 0}
                                         width={VEHICLE_DETAIL_IMG_W}
                                         height={VEHICLE_DETAIL_IMG_H}
