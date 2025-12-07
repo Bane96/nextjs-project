@@ -8,10 +8,12 @@ const VehicleDetail = dynamic(() => import('@/components/VehicleDetail'));
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const { id } =  await params
+    const decodedId = decodeURIComponent(id);
 
-    const vehicle = vehicleData.data.find(
-        (v) => `${v.brand}-${v.model}-${v.year}` === decodeURIComponent(id)
-    ) as Vehicle;
+    const vehicle = vehicleData.data.find((v) => {
+        const slug = `${v.brand}-${v.model}-${v.year}`;
+        return slug === decodedId;
+    }) as Vehicle | undefined;
 
     if (!vehicle) {
         return {
