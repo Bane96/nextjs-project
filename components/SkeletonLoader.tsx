@@ -15,9 +15,12 @@ export default function SkeletonLoader({elementsCount = 9}: { elementsCount?: nu
                         </svg>
                     </div>
                     <div className="px-4 py-2">
-                        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-200 w-10 mb-2"></div>
-                        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-200 w-48 mb-2.5 mb-7"></div>
-                        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-200"></div>
+                        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-200 w-9 mb-2"></div>
+                        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-200 w-20 mb-2.5 mb-7"></div>
+                        <div className="flex justify-between align-middle">
+                        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-200 w-20 mb-2"></div>
+                        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-200 w-14 mb-2"></div>
+                        </div>
                         <div className="mt-4">
                             <div className="h-10 bg-gray-200 rounded-lg dark:bg-gray-200"></div>
                         </div>
