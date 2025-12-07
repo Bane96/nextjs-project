@@ -2,6 +2,7 @@ import vehicleData from "@/data/vehicle_data.json";
 import {Vehicle} from '@/model/Vehicle';
 import {Metadata} from 'next';
 import dynamic from 'next/dynamic';
+
 const EmptyState = dynamic(() => import('@/components/EmptyState'));
 const VehicleDetail = dynamic(() => import('@/components/VehicleDetail'));
 

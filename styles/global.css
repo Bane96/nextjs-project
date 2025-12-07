@@ -12,6 +12,33 @@
     .input-primary {
         @apply border p-2 rounded-xl text-sm focus:border-primary focus:ring-0 focus:outline-none hover:border-primary
     }
+    .sub-card {
+        @apply bg-white rounded-xl shadow-md p-4 w-full;
+        margin-left: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    @media (min-width: 640px) {
+        .sub-card {
+            margin-left: 50px;
+            max-width: calc(100% - 50px);
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .sub-card {
+            margin-left: 80px;
+            max-width: calc(100% - 80px);
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .sub-card {
+            margin-left: 130px;
+            max-width: calc(100% - 130px);
+        }
+    }
 }
 .mySwiper{
     --swiper-navigation-color: white;
